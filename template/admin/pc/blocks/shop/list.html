@@ -1,0 +1,73 @@
+{{ define "index" }}
+<h2>{{ .title }} List</h2>
+<p>共 {{ .count }} 筆</p>
+<div>
+    <table class="table table-hover table-striped">
+       <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">MainCategory</th>
+                <th scope="col">CategoryId</th>
+                <th scope="col">SubCategory</th>
+                <th scope="col">SubCategoryId</th>
+                <th scope="col">ShopName</th>
+                <th scope="col">Tel</th>
+                <th scope="col">CityId</th>
+                <th scope="col">DistrictId</th>
+                <th scope="col">Address</th>
+                <th scope="col">Metro</th>
+                <th scope="col">LeaveDay</th>
+                <th scope="col">Opening</th>
+                <th scope="col">Description</th>
+                <th scope="col">RateDelicious</th>
+                <th scope="col">RateQuality</th>
+                <th scope="col">RateEnviroment</th>
+                <th scope="col">Menu</th>
+                <th scope="col">ShopImage</th>
+                <th scope="col">UpdatedAt</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range $i, $v := .data }}
+                <tr>
+                    <th scope="row">{{ $v.Id }}</th>
+                    <td>{{ $v.MainCategory }}</td>
+                    <td>{{ $v.CategoryId }}</td>
+                    <td>{{ $v.SubCategory }}</td>
+                    <td>{{ $v.SubCategoryId }}</td>
+                    <td>{{ $v.ShopName }}</td>
+                    <td>{{ $v.Tel }}</td>
+                    <td>{{ $v.CityId }}</td>
+                    <td>{{ $v.DistrictId }}</td>
+                    <td>{{ $v.Address }}</td>
+                    <td>{{ $v.Metro }}</td>
+                    <td>{{ $v.LeaveDay }}</td>
+                    <td>{{ $v.Opening }}</td>
+                    <td>{{ $v.Description }}</td>
+                    <td>{{ $v.RateDelicious }}</td>
+                    <td>{{ $v.RateQuality }}</td>
+                    <td>{{ $v.RateEnviroment }}</td>
+                    <td>{{ $v.Menu }}</td>
+                    <td>{{ $v.ShopImage }}</td>
+                    <td>{{ $v.UpdatedAt }}</td>
+               </tr>
+            {{ end }}
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {{ if .pagination.prev }}
+                <li class="page-item"><a class="page-link" href="page{{ .pagination.first }}"><<</a></li>
+                <li class="page-item"><a class="page-link" href="page{{ .pagination.prev }}"><</a></li>
+            {{ end }}
+            {{ range $i, $v := .pagination.pages }}
+                <li class="page-item"><a class="page-link" href="page{{ $v }}">{{ $v }}</a></li>
+            {{ end }}
+            {{ if .pagination.next }}
+                <li class="page-item"><a class="page-link" href="page{{ .pagination.next }}">></a></li>
+                <li class="page-item"><a class="page-link" href="page{{ .pagination.last }}">>></a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</div>
+{{ end }}

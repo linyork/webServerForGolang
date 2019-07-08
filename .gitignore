@@ -1,0 +1,18 @@
+# mac
+.DS_Store
+
+# goland
+/.env
+/gin-bin
+/.idea/*
+
+
+# govendor json file
+/vendor/*
+!/vendor/vendor.json
+
+# node
+/node_modules/*
+
+# parcel
+/.cache/*

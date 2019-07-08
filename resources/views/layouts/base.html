@@ -1,0 +1,36 @@
+{{define "layout.base"}}
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <title>美食查詢-台北市-</title>
+        <meta charset="UTF-8">
+        <meta name="format-detection" content="telephone=no,address=no,email=no">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="/assets/css/common.css">
+        {{template "customCss" .}}
+        {{template "customScript" .}}
+    </head>
+    <body>
+        <header>
+            <h1><span>台北市/信義區/日式料理/居酒屋 美食查詢</span></h1>
+            <div class="headerLogo">
+                <a href=""><img src="/assets/img/logo.png" alt="LOGO"></a>
+            </div>
+        </header>
+
+        {{template "content" .}}
+
+        <footer class="f-footer">
+            <div class="footerLogo">
+                <a href="">
+                    <img src="/assets/img/logo.png" alt="LOGO">
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>
+{{end}}
+
+{{define "customCss" }}{{end}}
+
+{{define "customScript" }}{{end}}

@@ -1,0 +1,23 @@
+{{ define "index" }}
+<h2>{{ .title }} List</h2>
+<div>
+	<table class="table table-hover table-striped">
+  		<thead>
+    		<tr>
+      			<th scope="col">#</th>
+            <th scope="col">CityId</th>
+      			<th scope="col">DistrictName</th>
+    		</tr>
+  		</thead>
+  		<tbody>
+  			{{ range $i, $v := .data }}
+    		<tr>
+      			<th scope="row">{{ $v.Id }}</th>
+            <td>{{ $v.CityId }}</td>
+      			<td>{{ $v.DistrictName }}</td>
+    		</tr>
+    		{{ end }}
+  		</tbody>
+	</table>
+</div>
+{{ end }}
